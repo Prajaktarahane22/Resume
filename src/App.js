@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import MyNavBar from "./components/MyNavBar";
+
+import{BrowserRouter , Route , Routes} from 'react-router-dom'
+
+import Home from "./components/Home";
+import VehicleList from "./components/VehicleList";
+import AddVehicle from "./components/AddVehicle";
+import About from "./components/About";
+import UpdateVehicle from "./components/UpdateVehicle";
+
+function App(){
+return (
+    <>
+    
+      <h1>Welcome to My Projects</h1>
+      <p>Learning react..........</p>
+        
+     <MyNavBar/>
+     
+     <BrowserRouter>
+     <Routes>
+     
+      {/*<Route path="/myresume" element={<MyResume/>}/>*/}
+
+      <Route path="/home" element={<Home/>}/>
+      <Route path="/vehicle-list" element={<VehicleList/>}/>
+      <Route path="/addvehicle" element={<AddVehicle/>}/>
+      <Route path="/about" element={<About/>}/>
+
+      <Route path="/update-vehicle" element={<UpdateVehicle/>}/>
+
+      
+
+
+
+
+
+
+      </Routes>
+     </BrowserRouter>
+      </>
+  )
+  
 }
 
 export default App;
+
